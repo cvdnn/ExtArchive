@@ -1,4 +1,4 @@
-### Maven
+### * Maven
 
 ```gradle
 uploadArchives {
@@ -26,7 +26,7 @@ LOCAL_REPO_URL = file:///datum/workspace/m2/mvn-repo/
 ./gradlew -p ext-archive clean build uploadArchives
 ```
 
-### Apply
+### * Apply
 
 在build.gradle最后添加下列代码：
 
