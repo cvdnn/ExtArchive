@@ -16,6 +16,7 @@ public class DNSMeta implements Meta {
 
     @Override
     String toString() {
-        return "DNS: ${resolves}"
+
+        return toProperties()
     }
 }

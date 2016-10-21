@@ -24,10 +24,7 @@ public class MEMeta implements Meta {
 
     @Override
     String toString() {
-        return "host: ${host} \n" +
-                "prot: ${port} \n" +
-                "userName: ${userName} \n" +
-                "password: ${password} \n" +
-                "project: ${project}"
+
+        return toProperties()
     }
 }

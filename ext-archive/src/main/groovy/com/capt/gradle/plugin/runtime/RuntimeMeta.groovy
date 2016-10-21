@@ -1,8 +1,9 @@
-package com.capt.gradle.plugin.app
+package com.capt.gradle.plugin.runtime
 
 import com.capt.gradle.plugin.Meta
+import org.gradle.internal.impldep.org.apache.commons.collections.MapUtils
 
-public class AppMeta implements Meta {
+public class RuntimeMeta implements Meta {
     public static final String APP_CONFIG = 'appConfig'
 
     def extend = [:]
@@ -14,6 +15,8 @@ public class AppMeta implements Meta {
         extend.each { k, v ->
             text += "${k}=${v}\n"
         }
+
+        println '>>>>>>>: ' + MapUtils.toProperties(extend).toString()
 
         return text
     }

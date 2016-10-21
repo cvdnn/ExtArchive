@@ -1,17 +1,20 @@
-package com.capt.gradle.plugin.app
+package com.capt.gradle.plugin.runtime
 
+import com.capt.gradle.plugin.app.DNSMeta
+import com.capt.gradle.plugin.app.MEMeta
+import com.capt.gradle.plugin.app.URLMeta
 import com.capt.util.TextUtils
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
-public class AppConfigBuildTask extends DefaultTask {
-    public static final String TASK_MIX_APP_CONFIG = 'mixAppConfig'
+public class RuntimeConfigBuildTask extends DefaultTask {
+    public static final String TASK_MIX_APP_CONFIG = 'mixAppConfig';
 
-    private AppMeta mAppMeta
+    private RuntimeMeta mAppMeta;
 
     @TaskAction
     void action() {
-        mAppMeta = project.extensions."${AppMeta.APP_CONFIG}"
+        mAppMeta = project.extensions.runtimeConfig;
 
         def text = mAppMeta."${URLMeta.META_URL}".toProperties() +
                 mAppMeta."${MEMeta.META_ME}".toProperties() +

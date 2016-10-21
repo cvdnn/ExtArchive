@@ -26,9 +26,7 @@ public class URLMeta implements Meta {
 
     @Override
     String toString() {
-        return "base: ${base} \n" +
-                "cas: ${cas} \n" +
-                "image: ${image} \n" +
-                "tgt: ${tgt}"
+
+        return toProperties()
     }
 }
