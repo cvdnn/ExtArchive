@@ -1,4 +1,4 @@
-### Maven
+### * Maven
 
 ```gradle
 uploadArchives {
@@ -10,7 +10,8 @@ uploadArchives {
     }
 }
 ```
-相应的gradl.properties配置文件如下：
+相应的 `gradl.properties` 配置文件如下：
+
 ```properties
 #包信息
 GROUP_ID = com.capt
@@ -26,9 +27,9 @@ LOCAL_REPO_URL = file:///datum/workspace/m2/mvn-repo/
 ./gradlew -p ext-archive clean build uploadArchives
 ```
 
-### Apply
+### * Apply
 
-在build.gradle最后添加下列代码：
+在 `build.gradle` 最后添加下列代码：
 
 ```gradle
 buildscript {
@@ -46,7 +47,7 @@ buildscript {
 apply from: 'https://raw.githubusercontent.com/jzg01/mvn-repo/master/mixAppConfig.gradle'
 ```
 
-其中gradle.properties中添加下列配置：
+其中 `gradle.properties` 中添加下列配置：
 
 ```properties
 # ###################################
