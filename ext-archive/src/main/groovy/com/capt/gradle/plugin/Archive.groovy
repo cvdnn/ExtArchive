@@ -1,15 +1,9 @@
 package com.capt.gradle.plugin
 
-import com.capt.gradle.plugin.app.AppConfigBuildTask
-import com.capt.gradle.plugin.app.AppConfigCleanTask
-import com.capt.gradle.plugin.app.AppMeta
-import com.capt.gradle.plugin.app.DNSMeta
-import com.capt.gradle.plugin.app.MEMeta
-import com.capt.gradle.plugin.app.URLMeta
+import com.capt.gradle.plugin.app.*
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.gradle.internal.impldep.org.apache.commons.collections.MapUtils
 
 public class Archive implements Plugin<Project> {
     private Project mProject;
@@ -33,9 +27,6 @@ public class Archive implements Plugin<Project> {
 
         taskDependsOn('clean', AppConfigCleanTask.TASK_CLEAN_APP_CONFIG)
         taskDependsOn('preBuild', AppConfigBuildTask.TASK_MIX_APP_CONFIG)
-
-        def extend = [app: 'capt']
-        println '>>>>>>>: ' + MapUtils.toProperties(extend).toString()
     }
 
     private void taskDependsOn(String taskName, String donTask) {
