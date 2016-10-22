@@ -1,6 +1,7 @@
 package com.capt.gradle.plugin
 
 import com.capt.gradle.plugin.app.*
+import com.capt.gradle.plugin.git.GitPushBuildTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
@@ -27,6 +28,9 @@ public class Archive implements Plugin<Project> {
 
         taskDependsOn('clean', AppConfigCleanTask.TASK_CLEAN_APP_CONFIG)
         taskDependsOn('preBuild', AppConfigBuildTask.TASK_MIX_APP_CONFIG)
+
+        // git
+        mProject.task(GitPushBuildTask.TASK_GIT_PUSH, type: GitPushBuildTask)
     }
 
     private void taskDependsOn(String taskName, String donTask) {
