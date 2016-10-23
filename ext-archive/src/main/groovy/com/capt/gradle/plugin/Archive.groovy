@@ -1,6 +1,7 @@
 package com.capt.gradle.plugin
 
 import com.capt.gradle.plugin.app.*
+import com.capt.gradle.plugin.git.GitMeta
 import com.capt.gradle.plugin.git.GitPushBuildTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -14,6 +15,7 @@ public class Archive implements Plugin<Project> {
         mProject = project;
 
         mixAppConfig()
+        gitConfig()
     }
 
     private void mixAppConfig() {
@@ -28,8 +30,12 @@ public class Archive implements Plugin<Project> {
 
         taskDependsOn('clean', AppConfigCleanTask.TASK_CLEAN_APP_CONFIG)
         taskDependsOn('preBuild', AppConfigBuildTask.TASK_MIX_APP_CONFIG)
+    }
 
+    private void gitConfig() {
         // git
+        GitMeta gitMeta = mProject.extensions.create(GitMeta.GIT_CONFIG, GitMeta)
+
         mProject.task(GitPushBuildTask.TASK_GIT_PUSH, type: GitPushBuildTask)
     }
 

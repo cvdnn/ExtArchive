@@ -14,30 +14,6 @@ uploadArchives {
 
         pom.groupId = 'com.capt'
         pom.artifactId = 'ext-archive'
-        pom.version = '0.2.3'
+        pom.version = '0.2.6_1'
     }
-}
-
-task gitAdd(type: Exec) {
-    commandLine 'git', 'add', '--all'
-    workingDir = file("${GIT_REPO}")
-}
-
-task gitCommit(type: Exec) {
-    commandLine 'git', 'commit', '-m', '\"merge Archive\"'
-    workingDir = file("${GIT_REPO}")
-}
-
-task gitPush(type: Exec) {
-    commandLine 'git', 'push', 'origin', 'master'
-    workingDir = file("${GIT_REPO}")
-}
-
-task pushArchive(type: Exec) {
-    dependsOn gitAdd
-    dependsOn gitCommit
-    dependsOn gitPush
-
-    commandLine 'git', 'status'
-    workingDir = file("${GIT_REPO}")
 }
