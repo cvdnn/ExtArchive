@@ -15,7 +15,6 @@ public class Archive implements Plugin<Project> {
         mProject = project;
 
         mixAppConfig()
-        gitConfig()
     }
 
     private void mixAppConfig() {

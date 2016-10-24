@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExtArchive.iml" filepath="$PROJECT_DIR$/.idea/modules/ExtArchive.iml" />
       <module fileurl="file://$PROJECT_DIR$/ExtArchive.iml" filepath="$PROJECT_DIR$/ExtArchive.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ext-archive/ext-archive.iml" filepath="$PROJECT_DIR$/ext-archive/ext-archive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ext-archive/ext-archive.iml" filepath="$PROJECT_DIR$/.idea/modules/ext-archive/ext-archive.iml" />
     </modules>
   </component>
 </project>
