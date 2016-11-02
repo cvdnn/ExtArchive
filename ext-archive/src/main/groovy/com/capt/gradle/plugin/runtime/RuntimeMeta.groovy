@@ -1,22 +1,25 @@
 package com.capt.gradle.plugin.runtime
 
 import com.capt.gradle.plugin.Meta
-import org.gradle.internal.impldep.org.apache.commons.collections.MapUtils
 
 public class RuntimeMeta implements Meta {
-    public static final String APP_CONFIG = 'appConfig'
+    public static final String RUNTIME_CONFIG = 'runtimeConfig'
 
-    def extend = [:]
+    def os = '2'
+    def api = '4'
+    def attachment = [:]
 
     @Override
     String toProperties() {
-        def text = '\n# EXTEND\n'
+        def text = '\n# RUNTIME\n'
 
-        extend.each { k, v ->
+        text += "os=${os}\n" +
+                "api=${api}\n"
+
+        text += '\n# EXTEND\n'
+        attachment.each { k, v ->
             text += "${k}=${v}\n"
         }
-
-        println '>>>>>>>: ' + MapUtils.toProperties(extend).toString()
 
         return text
     }

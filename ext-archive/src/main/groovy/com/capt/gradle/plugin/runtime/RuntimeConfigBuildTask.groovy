@@ -1,25 +1,22 @@
 package com.capt.gradle.plugin.runtime
 
-import com.capt.gradle.plugin.app.DNSMeta
-import com.capt.gradle.plugin.app.MEMeta
-import com.capt.gradle.plugin.app.URLMeta
+import com.capt.gradle.plugin.ALiYunMeta
 import com.capt.util.TextUtils
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
 public class RuntimeConfigBuildTask extends DefaultTask {
-    public static final String TASK_MIX_APP_CONFIG = 'mixAppConfig';
+    public static final String TASK_MIX_RUNTIME_CONFIG = 'mixRuntimeConfig';
 
-    private RuntimeMeta mAppMeta;
+    private RuntimeMeta mRuntimeMeta;
 
     @TaskAction
     void action() {
-        mAppMeta = project.extensions.runtimeConfig;
+        mRuntimeMeta = project.extensions."${RuntimeMeta.RUNTIME_CONFIG}";
 
-        def text = mAppMeta."${URLMeta.META_URL}".toProperties() +
-                mAppMeta."${MEMeta.META_ME}".toProperties() +
-                mAppMeta."${DNSMeta.META_DNS}".toProperties() +
-                mAppMeta.toProperties()
+        def text = mRuntimeMeta.toProperties() +
+                mRuntimeMeta."${AppRuntimeMeta.META_APP_RUNTIME}".toProperties() +
+                mRuntimeMeta."${ALiYunMeta.META_ALIYUN}".toProperties()
 
         def mix = TextUtils.toFake(text);
 
@@ -35,6 +32,6 @@ public class RuntimeConfigBuildTask extends DefaultTask {
         File dir = new File(project.buildDir, "intermediates/assets/${dirName}")
         dir.mkdirs();
 
-        new File(dir, 'app_config.ppm').write(text, 'UTF-8')
+        new File(dir, 'runtime_config.ppm').write(text, 'UTF-8')
     }
 }

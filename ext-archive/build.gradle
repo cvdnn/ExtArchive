@@ -14,6 +14,6 @@ uploadArchives {
 
         pom.groupId = 'com.capt'
         pom.artifactId = 'ext-archive'
-        pom.version = '0.2.6_1'
+        pom.version = '0.3.6'
     }
 }

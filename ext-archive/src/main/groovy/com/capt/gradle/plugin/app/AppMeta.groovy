@@ -5,13 +5,13 @@ import com.capt.gradle.plugin.Meta
 public class AppMeta implements Meta {
     public static final String APP_CONFIG = 'appConfig'
 
-    def extend = [:]
+    def attachment = [:]
 
     @Override
     String toProperties() {
         def text = '\n# EXTEND\n'
 
-        extend.each { k, v ->
+        attachment.each { k, v ->
             text += "${k}=${v}\n"
         }
 

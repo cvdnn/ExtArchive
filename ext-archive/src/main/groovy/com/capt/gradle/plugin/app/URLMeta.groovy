@@ -7,11 +7,14 @@ public class URLMeta implements Meta {
 
     /** url */
     def base = ''
+
     /** account interface url */
     def cas = ''
-    /** */
+
+    /** image url */
     def image = ''
-    /** */
+
+    /** tag url */
     def tgt = ''
 
     @Override

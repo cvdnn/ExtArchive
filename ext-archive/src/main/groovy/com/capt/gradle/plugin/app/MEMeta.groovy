@@ -9,7 +9,7 @@ public class MEMeta implements Meta {
     def port = '1833'
     def userName = 'bi'
     def password = 'Horizon147503'
-    def project = ''
+    def _project = ''
 
     @Override
     String toProperties() {
@@ -19,7 +19,7 @@ public class MEMeta implements Meta {
                 "me_port=${port}\n" +
                 "me_user_name=${userName}\n" +
                 "me_password=${password}\n" +
-                "me_project=${project}\n"
+                "me_project=${_project}\n"
     }
 
     @Override
