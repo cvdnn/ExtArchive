@@ -8,8 +8,8 @@ public class AppConfigCleanTask extends DefaultTask {
 
     @TaskAction
     void action() {
-        new File(project.buildDir, "intermediates/assets/debug/app_config.ppm").delete()
-        new File(project.buildDir, "intermediates/assets/release/app_config.ppm").delete()
+        new File(project.buildDir, "generated/assets/shaders/debug/app_config.ppm").delete()
+        new File(project.buildDir, "generated/assets/shaders/release/app_config.ppm").delete()
 
         println ':: cleaned App config'
         println()

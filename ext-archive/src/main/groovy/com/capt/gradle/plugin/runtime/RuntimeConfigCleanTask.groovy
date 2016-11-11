@@ -8,8 +8,8 @@ public class RuntimeConfigCleanTask extends DefaultTask {
 
     @TaskAction
     void action() {
-        new File(project.buildDir, "intermediates/assets/debug/runtime_config.ppm").delete()
-        new File(project.buildDir, "intermediates/assets/release/runtime_config.ppm").delete()
+        new File(project.buildDir, "generated/assets/shaders/debug/runtime_config.ppm").delete()
+        new File(project.buildDir, "generated/assets/shaders/release/runtime_config.ppm").delete()
 
         println ':: cleaned runtime config'
         println()

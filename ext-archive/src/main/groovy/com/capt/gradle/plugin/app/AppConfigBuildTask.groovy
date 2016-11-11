@@ -29,7 +29,7 @@ public class AppConfigBuildTask extends DefaultTask {
     }
 
     private void write(String dirName, String text) {
-        File dir = new File(project.buildDir, "intermediates/assets/${dirName}")
+        File dir = new File(project.buildDir, "generated/assets/shaders/${dirName}")
         dir.mkdirs();
 
         new File(dir, 'app_config.ppm').write(text, 'UTF-8')

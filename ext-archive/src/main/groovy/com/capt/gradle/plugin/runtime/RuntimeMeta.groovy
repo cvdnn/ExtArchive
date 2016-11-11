@@ -7,6 +7,8 @@ public class RuntimeMeta implements Meta {
 
     def os = '2'
     def api = '4'
+    def log_level = '4'
+
     def attachment = [:]
 
     @Override
@@ -14,7 +16,8 @@ public class RuntimeMeta implements Meta {
         def text = '\n# RUNTIME\n'
 
         text += "os=${os}\n" +
-                "api=${api}\n"
+                "api=${api}\n" +
+                "log_level=${log_level}"
 
         text += '\n# EXTEND\n'
         attachment.each { k, v ->

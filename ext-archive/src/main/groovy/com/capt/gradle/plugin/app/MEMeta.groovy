@@ -6,7 +6,7 @@ public class MEMeta implements Meta {
     public static final String META_ME = 'me'
 
     def host = 'mq.sq84.com'
-    def port = '1833'
+    def port = '1883'
     def userName = 'bi'
     def password = 'Horizon147503'
     def _project = ''

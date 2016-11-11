@@ -11,11 +11,11 @@ public class URLMeta implements Meta {
     /** account interface url */
     def cas = ''
 
-    /** image url */
-    def image = ''
-
     /** tag url */
     def tgt = ''
+
+    /** image url */
+    def image = ''
 
     @Override
     String toProperties() {
@@ -23,8 +23,8 @@ public class URLMeta implements Meta {
         return "\n# URL\n" +
                 "url_base=${base}\n" +
                 "url_cas=${cas}\n" +
-                "url_image=${image}\n" +
-                "tgt_server=${tgt}\n"
+                "url_tgt=${tgt}\n" +
+                "url_image=${image}\n"
     }
 
     @Override
