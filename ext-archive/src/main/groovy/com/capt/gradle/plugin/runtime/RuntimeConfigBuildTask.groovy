@@ -20,20 +20,22 @@ public class RuntimeConfigBuildTask extends DefaultTask {
 
         def mix = TextUtils.toFake(text);
 
-        write('debug', mix)
-        write('release', mix)
+        boolean writeDebug = write('debug', mix)
+        boolean writeRelease = write('release', mix)
 
         println ':: mixed App config'
         println text
         println '----------------------'
+        println "::result: debug: ${writeDebug}; release: ${writeRelease}"
     }
 
-    private void write(String dirName, String text) {
+    private boolean write(String dirName, String text) {
         File dir = new File(project.buildDir, "generated/assets/shaders/${dirName}")
         dir.mkdirs();
 
-        new File(dir, 'runtime_config.ppm').write(text, 'UTF-8')
+        File file = new File(dir, 'runtime_config.ppm')
+        file.write(text, 'UTF-8')
 
-        File gdir = new File(project.buildDir, "generated")
+        return file.exists()
     }
 }
