@@ -22,5 +22,6 @@ uploadArchives {
         pom.version = '0.5'
 //        pom.name = "xxx"
 //        pom.packaging = 'aar'
+
     }
 }
