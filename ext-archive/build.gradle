@@ -10,10 +10,17 @@ dependencies {
 
 uploadArchives {
     repositories.mavenDeployer {
-        repository(url: LOCAL_REPO_URL)
+//        repository(id: RELEASE_REPO_ID, url: RELEASE_REPO_URL) {
+//            authentication(userName: NEXUS_USER_NAME, password: NEXUS_PASSWORD)
+//        }
+
+        repository(id: RELEASE_REPO_ID, url: LOCAL_REPO_URL)
+        snapshotRepository(id: SNAPSHOTS_REPO_ID, url: LOCAL_REPO_URL)
 
         pom.groupId = 'com.capt'
         pom.artifactId = 'ext-archive'
-        pom.version = '0.3.13'
+        pom.version = '0.5'
+//        pom.name = "xxx"
+//        pom.packaging = 'aar'
     }
 }
