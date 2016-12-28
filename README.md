@@ -90,3 +90,32 @@ wx_appid						= wxc66eb581a42500b7
 # PreResolveHosts
 dns_resolve_hosts				= talkback.sq84.com,mq.sq84.com,cas.sq84.com,img.sq84.com,access.sq84.com,sq84.com,test.sq84.com
 ```
+
+### [MODULE]
+
+执行`gradle`命令
+
+```
+./gradlew :app.main:pullAppSetting
+
+```
+会得到下面的结果（获取app_setting.ppm内容）：
+
+```
+Parallel execution with configuration on demand is an incubating feature.
+Incremental java compilation is an incubating feature.
+WARNING [Project: :app.main] To shrink resources you must also enable ProGuard
+:app.main:pullAppSetting
+[100%] /sdcard/SmartHome/bin/app_setting.ppm
+
+jiIPGw4TMhQjGhkuWYMgRVOBI1BChHtoj3JocXhtc26BgSIoF3t9aHVxb4txdH5yZTFAOjI3SC5TbgZIEFpOP048NEU3cX5vd3FvfHJsfXB/Vw==
+----------------------
+#APP_SETTING
+#Wed Dec 28 19:59:26 GMT+08:00 2016
+password=[m]
+account=13800138000
+
+
+BUILD SUCCESSFUL
+
+```
