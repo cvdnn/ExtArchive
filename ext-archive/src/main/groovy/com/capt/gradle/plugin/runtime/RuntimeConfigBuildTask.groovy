@@ -1,6 +1,5 @@
 package com.capt.gradle.plugin.runtime
 
-import com.capt.gradle.plugin.ALiYunMeta
 import com.capt.util.TextUtils
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction

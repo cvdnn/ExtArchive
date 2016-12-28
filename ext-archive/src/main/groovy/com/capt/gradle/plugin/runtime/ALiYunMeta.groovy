@@ -1,4 +1,6 @@
-package com.capt.gradle.plugin
+package com.capt.gradle.plugin.runtime
+
+import com.capt.gradle.plugin.Meta
 
 class ALiYunMeta implements Meta {
     public static final String META_ALIYUN = 'aliyun'

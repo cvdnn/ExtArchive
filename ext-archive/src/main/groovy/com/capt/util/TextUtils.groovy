@@ -117,4 +117,10 @@ public final class TextUtils {
 
         return result;
     }
+
+    public static void main(String[] args) {
+        String text="jiIPGw4TMhQjGhkuWYMgRVOBI1BChHtoj3JzcXdsc253gSIoF3t9aHVxb4txdH5yZTFAOjI3SC5TbgZ8cXOBdYEOVUxCQ0g1STVsfHh2gmmAam97c3dj";
+
+        System.out.println(fromFake(text));
+    }
 }

@@ -3,13 +3,10 @@ package com.capt.gradle.plugin
 import com.capt.gradle.plugin.app.*
 import com.capt.gradle.plugin.git.GitMeta
 import com.capt.gradle.plugin.git.GitPushBuildTask
-import com.capt.gradle.plugin.runtime.AppRuntimeMeta
-import com.capt.gradle.plugin.runtime.RuntimeConfigBuildTask
-import com.capt.gradle.plugin.runtime.RuntimeConfigCleanTask
-import com.capt.gradle.plugin.runtime.RuntimeMeta
+import com.capt.gradle.plugin.runtime.*
+import com.capt.gradle.plugin.setting.AppSettingPullTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.Task
 
 public class Archive implements Plugin<Project> {
     private Project mProject;
@@ -25,9 +22,7 @@ public class Archive implements Plugin<Project> {
         createMixAppConfigTask()
         createMixRuntimeConfigTask()
 
-        // DependsOn
-        taskDependsOn('clean', AppConfigCleanTask.TASK_CLEAN_APP_CONFIG, RuntimeConfigCleanTask.TASK_CLEAN_RUNTIME_CONFIG)
-        taskDependsOn('preBuild', AppConfigBuildTask.TASK_MIX_APP_CONFIG, RuntimeConfigBuildTask.TASK_MIX_RUNTIME_CONFIG)
+        createAppSettingTask()
     }
 
     /**
@@ -57,17 +52,17 @@ public class Archive implements Plugin<Project> {
         mProject.task(RuntimeConfigBuildTask.TASK_MIX_RUNTIME_CONFIG, type: RuntimeConfigBuildTask)
     }
 
+    /**
+     * pull app setting
+     */
+    private void createAppSettingTask() {
+        mProject.task(AppSettingPullTask.TASK_PULL_APP_SETTING, type: AppSettingPullTask)
+    }
+
     private void gitConfig() {
         // git
         GitMeta gitMeta = mProject.extensions.create(GitMeta.GIT_CONFIG, GitMeta)
 
         mProject.task(GitPushBuildTask.TASK_GIT_PUSH, type: GitPushBuildTask)
-    }
-
-    private void taskDependsOn(String taskName, String... dependTasks) {
-        Set<Task> taskSet = mProject.getTasksByName(taskName, true)
-        taskSet?.each { t ->
-            t?.dependsOn dependTasks
-        }
     }
 }
