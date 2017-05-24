@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ext-archive" />
+            <option value="$PROJECT_DIR$/jib.util" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

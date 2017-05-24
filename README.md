@@ -20,7 +20,7 @@ uploadArchives {
 
 ```properties
 #包信息
-GROUP_ID = com.capt
+GROUP_ID = android.ztone
 ARTIFACTID = ext-archive
 LIBRARY_VERSION = 0.2
 

@@ -17,9 +17,9 @@ uploadArchives {
         repository(id: RELEASE_REPO_ID, url: LOCAL_REPO_URL)
         snapshotRepository(id: SNAPSHOTS_REPO_ID, url: LOCAL_REPO_URL)
 
-        pom.groupId = 'com.capt'
+        pom.groupId = 'android.ztone'
         pom.artifactId = 'ext-archive'
-        pom.version = '0.5'
+        pom.version = '0.1'
 //        pom.name = "xxx"
 //        pom.packaging = 'aar'
 

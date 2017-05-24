@@ -17,7 +17,8 @@ allprojects {
         jcenter()
         mavenCentral()
 
-//        mavenRepo urls: REMOTE_REPO_URL
+        maven { url RELEASE_REPO_URL}
+        maven { url SNAPSHOTS_REPO_URL}
     }
 }
 
@@ -25,4 +26,4 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-apply from: 'https://raw.githubusercontent.com/jzg01/mvn-repo/master/ReleaseGitMaven.gradle'
+// apply from: 'https://raw.githubusercontent.com/jzg01/mvn-repo/master/ReleaseGitMaven.gradle'

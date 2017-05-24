@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/ExtArchive.iml" filepath="$PROJECT_DIR$/ExtArchive.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ext-archive/ext-archive.iml" filepath="$PROJECT_DIR$/.idea/modules/ext-archive/ext-archive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jib.util/jib.util.iml" filepath="$PROJECT_DIR$/.idea/modules/jib.util/jib.util.iml" />
     </modules>
   </component>
 </project>
